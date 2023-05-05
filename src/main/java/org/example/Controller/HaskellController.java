@@ -2,10 +2,16 @@ package org.example.Controller;
 
 import org.example.Utilities.KeyManager;
 import java.io.*;
+import java.nio.file.*;
 public class HaskellController {
     public String conexionPorHaskell() throws IOException {
-        // Cambiar el directorio de trabajo y ejecutar cabal run
-        ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/c", "cd C:/Users/luism/OneDrive/Escritorio/TLC_Bank/src/main/Haskell & cabal run");
+
+        Path currentPath = Paths.get("").toAbsolutePath();
+        Path targetPath = Paths.get("src", "main", "Haskell");
+        Path combinedPath = currentPath.resolve(targetPath);
+        String pathString = combinedPath.toString();
+        String command = "cd " + pathString + " & cabal run";
+        ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/c", command);
         pb.redirectErrorStream(true);
         Process p = pb.start();
 

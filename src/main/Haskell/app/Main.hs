@@ -1,26 +1,32 @@
 module Main where
 
+import System.Directory (getCurrentDirectory)
+import System.FilePath ((</>))
 import System.IO (IOMode(ReadMode), hClose, hGetContents, openFile, Handle)
 import Security (decrypt)
 
 main :: IO ()
 main = do
-  let inputFilePath = "C:/Users/luism/OneDrive/Escritorio/TLC_Bank/src/main/Haskell/app/datos/token.txt"
+  -- Get the path to the current directory
+  currentDir <- getCurrentDirectory
+  
+  -- Construct the path to the token file relative to the project directory
+  let inputFilePath = currentDir </> "app" </> "datos" </> "token.txt"
 
-  -- Abrir el archivo de entrada para leer
+  -- Open the input file for reading
   handleIn <- openFile inputFilePath ReadMode
 
-  -- Leer el contenido del archivo
+  -- Read the contents of the input file
   contents <- hGetContents handleIn
 
-  -- Leer la clave del usuario
+  -- Read the user's key
   key <- getLine
 
-  -- Descifrar los datos utilizando la función decrypt
+  -- Decrypt the data using the decrypt function
   let decrypted = decrypt contents key
 
-  -- Enviar el string de respuesta a través de la salida estándar
+  -- Send the response string through standard output
   putStrLn decrypted
 
-  -- Cerrar el archivo de entrada
+  -- Close the input file
   hClose handleIn

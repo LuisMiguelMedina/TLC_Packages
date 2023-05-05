@@ -1,14 +1,22 @@
 module Security where
-  
+
+import System.Directory (getCurrentDirectory)
+import System.FilePath ((</>))
 import Data.Bits (xor)
 import Data.Char (chr, ord)
 import System.IO (hClose, hPutStrLn, openFile, IOMode(WriteMode), Handle)
 
 main :: IO ()
 main = do
-  let msg = "CloudSA63d961d9%LuismiFmat!"
-      key = "1415926535"
-      outputFilePath = "C:/Users/luism/OneDrive/Escritorio/TLC_Bank/src/main/Haskell/app/datos/token.txt"
+  -- Get the path to the current directory
+  currentDir <- getCurrentDirectory
+
+  -- Construct the path to the token file relative to the project directory
+  let outputFilePath = currentDir </> "app" </> "datos" </> "token.txt"
+
+  let msg = ""
+      key = ""
+
   let encrypted = encrypt msg key
   handleOut <- openFile outputFilePath WriteMode
   hPutStrLn handleOut encrypted
