@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.example.test.MainTest" time="38.799" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.example.test.MainTest" time="39.367" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="MX"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.5.8-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\luism\AppData\Local\Temp\surefire12481149874918128554\surefirebooter-20230505182700913_3.jar C:\Users\luism\AppData\Local\Temp\surefire12481149874918128554 2023-05-05T18-27-00_787-jvmRun1 surefire-20230505182700913_1tmp surefire_0-20230505182700913_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\luism\AppData\Local\Temp\surefire16100098175338277250\surefirebooter-20230505184755240_3.jar C:\Users\luism\AppData\Local\Temp\surefire16100098175338277250 2023-05-05T18-47-55_115-jvmRun1 surefire-20230505184755240_1tmp surefire_0-20230505184755240_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\luism\OneDrive\Documentos\GitHub\TLC_Packages\target\test-classes;C:\Users\luism\OneDrive\Documentos\GitHub\TLC_Packages\target\classes;C:\Users\luism\.m2\repository\com\microsoft\sqlserver\mssql-jdbc\12.2.0.jre11\mssql-jdbc-12.2.0.jre11.jar;C:\Users\luism\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.2\junit-jupiter-api-5.9.2.jar;C:\Users\luism\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\luism\.m2\repository\org\junit\platform\junit-platform-commons\1.9.2\junit-platform-commons-1.9.2.jar;C:\Users\luism\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\luism\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\luism\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\luism\AppData\Local\Temp\surefire12481149874918128554\surefirebooter-20230505182700913_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\luism\AppData\Local\Temp\surefire16100098175338277250\surefirebooter-20230505184755240_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.5+8"/>
@@ -57,43 +57,43 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testCrearCuentaView" classname="org.example.test.MainTest" time="6.572">
+  <testcase name="testCrearCuentaView" classname="org.example.test.MainTest" time="6.504">
     <system-out><![CDATA[Cliente creado exitosamente.
 Cuenta creada exitosamente.
 Cuenta eliminada exitosamente.
 Cliente eliminado exitosamente.
 ]]></system-out>
   </testcase>
-  <testcase name="testCrearCliente" classname="org.example.test.MainTest" time="2.116">
+  <testcase name="testCrearCliente" classname="org.example.test.MainTest" time="2.089">
     <system-out><![CDATA[Cliente creado exitosamente.
 Cliente eliminado exitosamente.
 ]]></system-out>
   </testcase>
-  <testcase name="testConexion" classname="org.example.test.MainTest" time="0.628"/>
-  <testcase name="testCrearCuenta" classname="org.example.test.MainTest" time="4.83">
+  <testcase name="testConexion" classname="org.example.test.MainTest" time="0.631"/>
+  <testcase name="testCrearCuenta" classname="org.example.test.MainTest" time="5.094">
     <system-out><![CDATA[Cliente creado exitosamente.
 Cuenta creada exitosamente.
 Cuenta eliminada exitosamente.
 Cliente eliminado exitosamente.
 ]]></system-out>
   </testcase>
-  <testcase name="testHacerRetiro" classname="org.example.test.MainTest" time="7.712">
+  <testcase name="testHacerRetiro" classname="org.example.test.MainTest" time="7.925">
     <system-out><![CDATA[Cliente creado exitosamente.
 Cuenta creada exitosamente.
-Tu cuenta 99901 retiró -50.0$ el 05/05/2023 18:27:19
+Tu cuenta 99901 retiró -50.0$ el 05/05/2023 18:48:14
 Retiro realizado!
 Cuenta eliminada exitosamente.
 Cliente eliminado exitosamente.
 ]]></system-out>
   </testcase>
-  <testcase name="testHacerDeposito" classname="org.example.test.MainTest" time="16.921">
+  <testcase name="testHacerDeposito" classname="org.example.test.MainTest" time="17.103">
     <system-out><![CDATA[Cliente creado exitosamente.
 Cliente creado exitosamente.
 Cuenta creada exitosamente.
 Cuenta creada exitosamente.
-Tu cuenta 99801 retiró -200.0$ el 05/05/2023 18:27:29
+Tu cuenta 99801 retiró -200.0$ el 05/05/2023 18:48:24
 700.0
-La cuenta 99901 recibió +200.0$ el 05/05/2023 18:27:32
+La cuenta 99901 recibió +200.0$ el 05/05/2023 18:48:27
 Deposito realizado! 200.0 a la cuenta de Perez Juan Alfonso
 Cuenta eliminada exitosamente.
 Cuenta eliminada exitosamente.
