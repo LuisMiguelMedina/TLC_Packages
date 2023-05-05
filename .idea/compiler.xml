@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="TLC_Bank" />
+        <module name="TLC_Packages" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="TLC_Bank" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
