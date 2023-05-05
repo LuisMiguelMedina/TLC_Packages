@@ -7,9 +7,6 @@ import org.example.Model.Deposito;
 import org.example.Model.Retiro;
 import org.example.Service.Query;
 import org.example.Utilities.KeyManager;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.jupiter.api.Test;
 import java.sql.SQLException;
 
