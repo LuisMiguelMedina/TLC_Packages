@@ -7,56 +7,25 @@ import java.lang.System;
 
 public class HaskellController {
     public String conexionPorHaskell() throws IOException {
-        String tokens = null;
+        ProcessBuilder pb = pathByOS();
+        pb.redirectErrorStream(true);
+        Process p = pb.start();
 
-        if (System.getenv("GITHUB_ACTIONS") != null && System.getenv("GITHUB_ACTIONS").equals("true")) {
-            String workspace = System.getenv("GITHUB_WORKSPACE");
-            File haskellDir = new File(workspace, "src/main/Haskell");
-            if (haskellDir.exists() && haskellDir.isDirectory()) {
-                ProcessBuilder pb = new ProcessBuilder("cabal", "run");
-                pb.directory(haskellDir);
-                pb.redirectErrorStream(true);
-                Process p = pb.start();
+        // Crear los streams para enviar solicitudes y recibir respuestas
+        BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        PrintWriter writer = new PrintWriter(p.getOutputStream(), true);
 
-                // Crear los streams para enviar solicitudes y recibir respuestas
-                BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
-                PrintWriter writer = new PrintWriter(p.getOutputStream(), true);
+        // key
+        writer.println(KeyManager.key);
 
-                // key
-                writer.println(KeyManager.key);
+        // Leer el string de respuesta del proceso Haskell
+        String invalid = reader.readLine();
+        String Tokens = reader.readLine();
 
-                // Leer el string de respuesta del proceso Haskell
-                String invalid = reader.readLine();
-                tokens = reader.readLine();
-
-                // Cerrar el proceso Haskell
-                p.destroy();
-            } else {
-                System.out.println("El directorio Haskell no existe");
-            }
-        } else {
-            ProcessBuilder pb = pathByOS();
-            pb.redirectErrorStream(true);
-            Process p = pb.start();
-
-            // Crear los streams para enviar solicitudes y recibir respuestas
-            BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            PrintWriter writer = new PrintWriter(p.getOutputStream(), true);
-
-            // key
-            writer.println(KeyManager.key);
-
-            // Leer el string de respuesta del proceso Haskell
-            String invalid = reader.readLine();
-            System.out.println(invalid);
-            tokens = reader.readLine();
-
-            // Cerrar el proceso Haskell
-            p.destroy();
-        }
-        return tokens;
+        // Cerrar el proceso Haskell
+        p.destroy();
+        return Tokens;
     }
-
     public ProcessBuilder pathByOS(){
         //Encuentra el sistema
         String os = System.getProperty("os.name").toLowerCase();

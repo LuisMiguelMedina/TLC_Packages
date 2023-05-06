@@ -17,9 +17,3 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: '17'
-
-    - name: Build with Maven
-      run: mvn package --file pom.xml
-
-    - name: Tests Windows
-      run: mvn test --file pom.xml

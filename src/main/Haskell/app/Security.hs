@@ -12,10 +12,11 @@ main = do
   currentDir <- getCurrentDirectory
 
   -- Construct the path to the token file relative to the project directory
-  let outputFilePath = currentDir </> "app" </> "datos" </> "token.txt"
+  let outputFilePath = currentDir </> "src" </> "main" </> "Haskell" </> "app" </> "datos" </> "token.txt"
+  putStrLn outputFilePath
 
   let msg = ""
-      key = ""
+      key = "1415926535"
 
   let encrypted = encrypt msg key
   handleOut <- openFile outputFilePath WriteMode
