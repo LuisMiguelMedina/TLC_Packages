@@ -50,6 +50,7 @@ public class HaskellController {
     }
     public String contrasena(String tokens){
         String[] split = tokens.split("%");
-        return split[1];
+        String password = split[1];
+        return password.substring(0, password.length() - 1);
     }
 }

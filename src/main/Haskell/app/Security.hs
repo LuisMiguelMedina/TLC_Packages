@@ -15,7 +15,7 @@ main = do
   let outputFilePath = currentDir </> "src" </> "main" </> "Haskell" </> "app" </> "datos" </> "token.txt"
   putStrLn outputFilePath
 
-  let msg = ""
+  let msg = "CloudSA63d961d9%LuismiFmat!"
       key = "1415926535"
 
   let encrypted = encrypt msg key
