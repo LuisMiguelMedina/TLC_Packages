@@ -3,15 +3,12 @@ package org.example.Controller;
 import org.example.Utilities.KeyManager;
 import java.io.*;
 import java.nio.file.*;
+import java.lang.System;
+
 public class HaskellController {
     public String conexionPorHaskell() throws IOException {
 
-        Path currentPath = Paths.get("").toAbsolutePath();
-        Path targetPath = Paths.get("src", "main", "Haskell");
-        Path combinedPath = currentPath.resolve(targetPath);
-        String pathString = combinedPath.toString();
-        String command = "cd " + pathString + " & cabal run";
-        ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/c", command);
+        ProcessBuilder pb = pathByOS();
         pb.redirectErrorStream(true);
         Process p = pb.start();
 
@@ -29,6 +26,25 @@ public class HaskellController {
         // Cerrar el proceso Haskell
         p.destroy();
         return Tokens;
+    }
+    public ProcessBuilder pathByOS(){
+        //Encuentra el sistema
+        String os = System.getProperty("os.name").toLowerCase();
+
+        //Busca el path
+        Path currentPath = Paths.get("").toAbsolutePath();
+        Path targetPath = Paths.get("src", "main", "Haskell");
+        Path combinedPath = currentPath.resolve(targetPath);
+        String pathString = combinedPath.toString();
+
+        String command = "cd " + pathString + " & cabal run";
+        if (os.contains("win")) {
+            command = "cd " + pathString + " & cabal run";
+            return new ProcessBuilder("cmd.exe", "/c", command);
+        } else {
+            command = "cd " + pathString + " && cabal run";
+            return new ProcessBuilder("/bin/bash", "-c", command);
+        }
     }
     public String usuario(String tokens){
     String[] split = tokens.split("%");
