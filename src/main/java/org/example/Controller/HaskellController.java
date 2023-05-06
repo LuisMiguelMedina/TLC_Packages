@@ -48,6 +48,7 @@ public class HaskellController {
 
             // Leer el string de respuesta del proceso Haskell
             String invalid = reader.readLine();
+            System.out.println(invalid);
             tokens = reader.readLine();
 
             // Cerrar el proceso Haskell
