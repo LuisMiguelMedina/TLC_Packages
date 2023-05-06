@@ -4,8 +4,24 @@ import org.example.Utilities.KeyManager;
 import java.io.*;
 import java.nio.file.*;
 import java.lang.System;
-
 public class HaskellController {
+    public boolean validarDatosClave(String clave) {
+        if (clave.length() > 10) {
+            return false;
+        }
+        if (clave.length() < 2){
+            return false;
+        }
+        for (int i = 0; i < clave.length() - 1; i++) {
+            if (clave.charAt(i) == ' ' || clave.charAt(i) == '-') {
+                return false;
+            }
+            if (clave.charAt(i+1) == ' ' || clave.charAt(i+1) == '-') {
+                return false;
+            }
+        }
+        return true;
+    }
     public String conexionPorHaskell() throws IOException {
         ProcessBuilder pb = pathByOS();
         pb.redirectErrorStream(true);
