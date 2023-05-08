@@ -16,7 +16,7 @@ main = do
   putStrLn outputFilePath
 
   let msg = ""
-      key = "1415926535"
+      key = ""
 
   let encrypted = encrypt msg key
   handleOut <- openFile outputFilePath WriteMode

@@ -55,8 +55,4 @@ public class VentanaConexion extends JFrame implements ActionListener {
             }
         }
     }
-    public static void main(String[] args) {
-        VentanaConexion ventanaConexion = new VentanaConexion();
-        ventanaConexion.setVisible(true);
-    }
 }

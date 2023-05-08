@@ -12,7 +12,6 @@ import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 public class MainTest {
-    private String tempKey = "1415926535";
     ConexionController conexionController = new ConexionController();
     ClienteController clienteController = new ClienteController();
     CuentaController cuentaController = new CuentaController();
@@ -23,6 +22,7 @@ public class MainTest {
     Cuenta cuenta2 = new Cuenta("C998", "CC01", 500.0,"99801");
 
     public void setUp() {
+        String tempKey = "1415926535";
         KeyManager.setTempKey(tempKey);
     }
     @Test
